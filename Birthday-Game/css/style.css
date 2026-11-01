@@ -1,0 +1,937 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #EAE7F2;
+    color: #514B5C;
+    min-height: 100vh;
+}
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 390px;
+    padding: 40px 30px;
+    border-radius: 30px;
+
+    background: #EAE7F2;
+
+    box-shadow:
+        12px 12px 24px #cbc8d2,
+        -12px -12px 24px #ffffff;
+
+    text-align: center;
+}
+
+.game-icon {
+    width: 75px;
+    height: 75px;
+    border-radius: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 22px;
+
+    font-size: 35px;
+    color: #A982C5;
+
+    box-shadow:
+        6px 6px 12px #cbc8d2,
+        -6px -6px 12px #ffffff;
+}
+
+h1 {
+    font-size: 29px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #8C8498;
+    margin-top: 8px;
+    margin-bottom: 35px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.input-group input {
+    width: 100%;
+    height: 52px;
+
+    border: none;
+    outline: none;
+    border-radius: 14px;
+
+    background: #EAE7F2;
+
+    padding: 0 17px;
+
+    font-family: inherit;
+    font-size: 14px;
+    color: #514B5C;
+
+    box-shadow:
+        inset 5px 5px 10px #cbc8d2,
+        inset -5px -5px 10px #ffffff;
+}
+
+.input-group input::placeholder {
+    color: #AAA3B4;
+}
+
+.input-group input:focus {
+    box-shadow:
+        inset 3px 3px 7px #cbc8d2,
+        inset -3px -3px 7px #ffffff,
+        0 0 0 2px #C6A7D8;
+}
+
+.start-btn {
+    width: 100%;
+    height: 55px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: #C6A7D8;
+    color: white;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        5px 5px 12px #cbc8d2,
+        -5px -5px 12px #ffffff;
+
+    transition: 0.2s ease;
+}
+
+.start-btn span {
+    margin-left: 8px;
+    font-size: 18px;
+}
+
+.start-btn:active {
+    transform: scale(0.97);
+
+    box-shadow:
+        inset 4px 4px 8px rgba(90, 60, 110, 0.2),
+        inset -4px -4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.footer-text {
+    margin-top: 30px;
+    font-size: 11px;
+    color: #A49BAF;
+}
+
+.error-message {
+    font-size: 12px;
+    color: #C45C75;
+    margin: -8px 0 14px;
+    min-height: 16px;
+}
+
+@media (max-width: 380px) {
+    .login-card {
+        padding: 35px 22px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+}
+
+/* ==================================
+   BALLOON GAME INTERFACE
+================================== */
+
+.game-container {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    padding: 25px 18px;
+    text-align: center;
+}
+
+.game-header {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.game-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.game-symbol {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    color: #A982C5;
+    font-size: 25px;
+
+    box-shadow:
+        5px 5px 10px #cbc8d2,
+        -5px -5px 10px #ffffff;
+}
+
+.game-heading h1 {
+    font-size: 19px;
+}
+
+.game-heading p {
+    font-size: 11px;
+    color: #92899F;
+    margin-top: 4px;
+}
+
+
+/* SCORE CARD */
+
+.score-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 22px;
+    border-radius: 20px;
+
+    box-shadow:
+        inset 4px 4px 9px #cbc8d2,
+        inset -4px -4px 9px #ffffff;
+}
+
+.score-info {
+    text-align: left;
+}
+
+.score-info span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: #92899F;
+}
+
+.score-info h2 {
+    font-size: 27px;
+    margin-top: 5px;
+}
+
+.score-icon {
+    font-size: 28px;
+}
+
+
+/* PROGRESS */
+
+.progress-track {
+    height: 9px;
+    border-radius: 20px;
+    margin-top: 17px;
+
+    overflow: hidden;
+
+    box-shadow:
+        inset 3px 3px 6px #cbc8d2,
+        inset -3px -3px 6px #ffffff;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    border-radius: inherit;
+
+    background: linear-gradient(
+        90deg,
+        #A8C5D8,
+        #C6A7D8,
+        #E8AFC4
+    );
+
+    transition: width 0.3s ease;
+}
+
+
+/* GAME MESSAGE */
+
+.game-message {
+    font-size: 13px;
+    margin: 18px 0;
+    color: #81778E;
+    min-height: 20px;
+}
+
+
+/* PLAYGROUND */
+
+.balloon-playground {
+    position: relative;
+
+    height: 480px;
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background: #EAE7F2;
+
+    box-shadow:
+        inset 6px 6px 13px #cbc8d2,
+        inset -6px -6px 13px #ffffff;
+}
+
+.playground-decoration {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #C6A7D8;
+    opacity: 0.6;
+}
+
+
+/* BALLOONS */
+
+.balloon {
+    position: absolute;
+
+    bottom: -105px;
+
+    width: 55px;
+    height: 70px;
+
+    border: none;
+    border-radius: 50% 50% 45% 45%;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-family: inherit;
+    font-size: 22px;
+    font-weight: 700;
+
+    z-index: 2;
+
+    animation:
+        balloonFloat var(--float-duration) linear forwards;
+
+    touch-action: manipulation;
+
+    box-shadow:
+        inset -7px -7px 12px rgba(0,0,0,0.12),
+        inset 7px 7px 12px rgba(255,255,255,0.5),
+        3px 5px 10px rgba(80,70,100,0.15);
+}
+
+
+/* NUMBER BALLOONS */
+
+.number-balloon:nth-of-type(3n) {
+    background: linear-gradient(
+        145deg,
+        #FFB6C9,
+        #F27DAB
+    );
+}
+
+.number-balloon:nth-of-type(3n + 1) {
+    background: linear-gradient(
+        145deg,
+        #A9D9F0,
+        #729BD9
+    );
+}
+
+.number-balloon:nth-of-type(3n + 2) {
+    background: linear-gradient(
+        145deg,
+        #D6B5F4,
+        #A47BD8
+    );
+}
+
+
+/* BOMB */
+
+.bomb-balloon {
+    background: linear-gradient(
+        145deg,
+        #77758D,
+        #39384F
+    );
+
+    font-size: 28px;
+}
+
+
+/* EMPTY */
+
+.empty-balloon {
+    background: linear-gradient(
+        145deg,
+        #B9E8D9,
+        #72C7B5
+    );
+}
+
+
+/* BALLOON STRING */
+
+.balloon::after {
+    content: "";
+    position: absolute;
+
+    width: 1px;
+    height: 27px;
+
+    background: rgba(120,110,140,0.45);
+
+    top: 69px;
+}
+
+
+/* FLOAT ANIMATION */
+
+@keyframes balloonFloat {
+
+    0% {
+        transform: translate3d(0, 0, 0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translate3d(
+            var(--drift),
+            -250px,
+            0
+        ) rotate(5deg);
+    }
+
+    100% {
+        transform: translate3d(0, -650px, 0) rotate(-5deg);
+    }
+
+}
+
+
+/* POP ANIMATION */
+
+.balloon.popping {
+    animation: balloonPop 0.2s ease forwards;
+    pointer-events: none;
+}
+
+@keyframes balloonPop {
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.35);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+}
+
+
+/* LEGEND */
+
+.game-legend {
+    display: flex;
+    justify-content: space-around;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.game-legend span {
+    font-size: 11px;
+    color: #81778E;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-number {
+    font-style: normal;
+    width: 20px;
+    height: 20px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+
+    color: white;
+
+    background: linear-gradient(
+        145deg,
+        #FFB6C9,
+        #F27DAB
+    );
+}
+
+
+/* WINNING SCREEN */
+
+.winning-screen {
+    padding: 55px 15px;
+    text-align: center;
+}
+
+.winning-icon {
+    font-size: 65px;
+    margin-bottom: 25px;
+}
+
+.winning-screen h1 {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.winning-screen p {
+    font-size: 13px;
+    color: #92899F;
+}
+
+.winning-score {
+    font-size: 35px;
+    font-weight: 700;
+    margin: 30px 0;
+    color: #A982C5;
+}
+
+.winning-screen h2 {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.winning-subtitle {
+    margin-top: 12px;
+}
+
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 480px) {
+
+    .game-container {
+        padding: 20px 12px;
+    }
+
+    .balloon-playground {
+        height: 430px;
+    }
+
+    .balloon {
+        width: 49px;
+        height: 63px;
+        font-size: 20px;
+    }
+
+    .game-heading h1 {
+        font-size: 17px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .balloon {
+        animation-duration: 12s;
+    }
+
+}
+
+/* ======================================
+   SURPRISE SCREEN
+====================================== */
+
+.surprise-screen {
+
+    width: 100%;
+
+    max-width: 420px;
+
+    margin: auto;
+
+    padding: 25px 10px 40px;
+
+    text-align: center;
+
+}
+
+
+.surprise-icon {
+
+    font-size: 55px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.surprise-screen h1 {
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.surprise-description {
+
+    color: #92899F;
+
+    font-size: 13px;
+
+}
+
+
+.winning-score {
+
+    font-size: 36px;
+
+    font-weight: 700;
+
+    color: #A982C5;
+
+    margin: 22px 0;
+
+}
+
+
+.surprise-title {
+
+    font-size: 19px;
+
+    line-height: 1.5;
+
+    margin-bottom: 10px;
+
+}
+
+
+.scratch-instruction {
+
+    font-size: 12px;
+
+    color: #92899F;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* ======================================
+   SCRATCH CARD
+====================================== */
+
+.scratch-card {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 340px;
+
+    aspect-ratio: 4 / 5;
+
+    margin: auto;
+
+    border-radius: 23px;
+
+    overflow: hidden;
+
+    background: #EAE7F2;
+
+    box-shadow:
+
+        9px 9px 20px #cbc8d2,
+
+        -9px -9px 20px #ffffff;
+
+}
+
+
+/* BIRTHDAY CARD AREA */
+
+.card-art {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+}
+
+
+.card-art img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+
+.card-placeholder {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    background: linear-gradient(
+
+        145deg,
+
+        #F4EAF6,
+
+        #E4DDF0,
+
+        #E9EAF5
+
+    );
+
+    color: #88769E;
+
+}
+
+
+.card-placeholder span {
+
+    font-size: 55px;
+
+}
+
+
+.card-placeholder p {
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    font-weight: 500;
+
+}
+
+
+/* SCRATCH CANVAS */
+
+#scratchCanvas {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    z-index: 3;
+
+    cursor: crosshair;
+
+    touch-action: none;
+
+    border-radius: 23px;
+
+}
+
+
+/* SCRATCH LABEL */
+
+.scratch-label {
+
+    position: absolute;
+
+    z-index: 4;
+
+    top: 50%;
+
+    left: 0;
+
+    width: 100%;
+
+    transform: translateY(-50%);
+
+    pointer-events: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #786D8B;
+
+}
+
+
+.scratch-label span {
+
+    color: #A982C5;
+
+    font-size: 20px;
+
+}
+
+
+.scratch-label p {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.scratch-label small {
+
+    font-size: 10px;
+
+    color: #92889F;
+
+}
+
+
+/* SCRATCH COMPLETE */
+
+.scratch-hidden {
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity 0.7s ease;
+
+}
+
+
+.label-hidden {
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+
+}
+
+
+.card-revealed {
+
+    animation: revealCard 0.7s ease;
+
+}
+
+
+@keyframes revealCard {
+
+    0% {
+
+        transform: scale(0.96);
+
+    }
+
+    100% {
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+/* FOOTER */
+
+.scratch-footer {
+
+    margin-top: 23px;
+
+    font-size: 11px;
+
+    color: #A49BAF;
+
+}
+
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 380px) {
+
+    .scratch-card {
+
+        max-width: 300px;
+
+    }
+
+    .surprise-screen h1 {
+
+        font-size: 22px;
+
+    }
+
+}
